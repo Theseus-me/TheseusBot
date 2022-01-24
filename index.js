@@ -357,22 +357,7 @@ const lang = {
         "SOPA means LOSER in Swedish"
     ],
     "VERSION_MISMATCH":"Config <-> Instance version mismatch",
-    "isGayResponses": {
-        "yes": [
-            "Is Gay! :kiss_mm:",
-            "Like's Men :rainbow_flag:",
-            "Is Gay, Make Fun Of Them",
-            "Has Homosexual Thoughts",
-            "Is As Straight As George Floyd's Criminal Record :boy_tone5:"
-        ],
-        "no": [
-            "Is As Straight As A Ruler :straight_ruler:",
-            "Is Straighter Than Their Mom's Stripper Pole",
-            "Only Likes Traps",
-            "Is Straighter Then Their Dad's Dick",
-            "Was Not Raped By Their Dad And Now Doesn't Hate Men"
-        ]
-    }, 
+
     "nitroSniper": {
         "prefix": "NITRO SNIPER",
         "getting_paymentsourceid": "Attempting to get payment source id to use more nitro codes...",
@@ -1632,79 +1617,7 @@ function botNode(_config, user, func) {
                 }
             }
         });
-        bot.commands.set("trap", {
-            name: 'trap',
-            description: 'traps arent gay',
-            type: 2,
-            usage: "trap",
-            originalcmd: true,
-            arguments: false,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://api.waifu.pics/nsfw/trap');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img.url;
-                msg.channel.send(embed(config.embedColors.info, `It's a trap!`, ``, ``, ``, url)).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-            }    
-        })
-        bot.commands.set("ass", {
-            name: 'ass',
-            description: 'get some ass',
-            type: 2,
-            usage: "ass",
-            arguments: false,
-            originalcmd: true,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://nekobot.xyz/api/image?type=ass');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img.message;
-                msg.channel.send(embed(config.embedColors.info, `Here's some ass`, ``, ``, ``, url)).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-            }    
-        });
-        bot.commands.set("boobs", {
-            name: 'boobs',
-            description: 'get a random picture nsfw picture of booba',
-            type: 2,
-            usage: 2,
-            originalcmd: true,
-            arguments: false,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://nekobot.xyz/api/image?type=boobs');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img.message;
-                msg.channel.send(embed(config.embedColors.info, `Here's some boobs`, ``, ``, ``, url)).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-        
-            }
-        });
+
         bot.commands.set("cbot", {
             name: "cbot",
             description: 'speak to the one and only, cleverbot',
@@ -1723,106 +1636,6 @@ function botNode(_config, user, func) {
             }
         });
 
-        bot.commands.set("hentaiass", {
-            name: 'hentaiass',
-            description: 'get a random hentai picture of ass',
-            type: 2,
-            usage: "hentaiass",
-            originalcmd: true,
-            arguments: false,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://nekobot.xyz/api/image?type=hass');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img.message;
-                msg.channel.send(embed(config.embedColors.info, `Right here is the hentai ass`, ``, ``, ``, url)).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-        
-            }
-        });
-        // bot.commands.set("midriff", {
-        //     name: 'midriff',
-        //     description: 'get some anime',
-        //     type: "NSFW",
-        //     usage: "midriff",
-        //     originalcmd: true,
-        //     arguments: false,
-        //     argsize: 1,
-        //     async execute(msg, args, bot) {
-        //         let getImg = async () => {
-        //             let response = await axios.get('https://nekobot.xyz/api/image?type=midriff');
-        //             let data = response.data;
-        //             return data;
-        //         }
-        //         let img = await getImg();
-        //         var url = img.message;
-        //         msg.channel.send(embed(config.embedColors.info, `anime tit region pic`, ``, ``, ``, url)).then( _msg => {
-        //             if(_msg.embeds == 0) {
-        //                 _msg.delete();
-        //                 _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-        //             }
-        //         } );
-        
-        //     }
-        // });
-        bot.commands.set("neko", {
-            name: 'neko',
-            description: 'cat gorls',
-            type: 2,
-            usage: "neko",
-            originalcmd: true,
-            arguments: false,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://nekobot.xyz/api/image?type=hneko');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img.message;
-                msg.channel.send(embed(config.embedColors.info, `here is cat gorl`, ``, ``, ``, url)).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-        
-            }
-        });
-        bot.commands.set("pussy", {
-            name: 'pussy',
-            description: 'some uncensored pussy',
-            type: 2,
-            usage: "pussy",
-            originalcmd: true,
-            arguments: false,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://cataas.com/cat');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img;
-                msg.channel.send(embed(config.embedColors.info, `heres some uncensored pussy`, ``, ``, ``, "https://cataas.com/cat?koda-cat=" + Math.floor(Math.random() * 182388874172654))).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-        
-            }
-        });
         bot.commands.set("closealldms", {
             name: 'closealldms',
             description: 'close every dm in your discord\nthis will not delete any of your messages',
@@ -1926,36 +1739,6 @@ function botNode(_config, user, func) {
                 var url = img.message;
                 msg.channel.send("", {files: [url]});
         
-            }
-        });
-        bot.commands.set("isgay", {
-            name: 'isgay',
-            description: 'see is someone is gay',
-            usage: "isgay @user",
-            type: 3,
-            arguments: true,
-            originalcmd: true,
-            argsize: 1,
-            execute(msg, args, bot) {
-                function embed(color = config.globalEmbedHex, title = "Title missing!", description = "", footer = "", thumbnail = "", image = "") { const embed = new RichEmbed() .setTitle(title) .setDescription(description) .setImage(image) .setFooter(footer) .setColor(color) .setThumbnail(thumbnail); return embed; }
-                var gay=msg['mentions']['users']['top'](),isgay;
-                switch (randmax(2)){
-                    case 1:
-                        isgay=true;
-                        break;
-                    case 2:
-                        isgay=false;
-                        break;
-                }
-                var yes=lang.isGayResponses.yes,no=lang.isGayResponses.no;
-                if(isgay){
-                    var random=Math.floor(Math.random() * yes['length']);
-                    msg.channel.send(embed(config.embedColors.info,`${gay.tag} ${yes[random]}`));
-                }
-                else{
-                    var random=Math.floor(Math.random() * no['length']);
-                    msg.channel.send(embed(config.embedColors.info,`${gay.tag} ${no[random]}`));
-                }
             }
         });
         bot.commands.set("jpeg", {
@@ -2166,30 +1949,6 @@ function botNode(_config, user, func) {
         
             }
         });
-        bot.commands.set("thighs", {
-            name: 'thighs',
-            description: 'thighs mmmmmmmmmmmmh.',
-            type: 3,
-            usage: "thighs",
-            originalcmd: true,
-            arguments: false,
-            argsize: 1,
-            async execute(msg, args, bot) {
-                let getImg = async () => {
-                    let response = await axios.get('https://nekobot.xyz/api/image?type=thigh');
-                    let data = response.data;
-                    return data;
-                }
-                let img = await getImg();
-                var url = img.message;
-                msg.channel.send(embed(config.embedColors.info, `Here's some thigh`, ``, ``, ``, url)).then( _msg => {
-                    if(_msg.embeds == 0) {
-                        _msg.delete();
-                        _msg.channel.send(embed(config.embedColors.danger, `Something went wrong!`, `A user in this guild/group/dm channel has their settings turned on to prevent seeing NSFW content! Could not post image`));
-                    }
-                } );
-            }    
-        });
         bot.commands.set("uptime", {
             name: 'uptime',
             description: 'check the uptime of the bot',
@@ -2342,7 +2101,6 @@ function botNode(_config, user, func) {
                     }    
                 }
                 var admin = [], 
-                nsfw = [], 
                 fun = [], 
                 tools = [],
                 troll = [],
@@ -2358,7 +2116,6 @@ function botNode(_config, user, func) {
                             admin.push(cmdname);
                             break;
                         case 2:
-                            nsfw.push(cmdname);
                             break;
                         case 3:
                             fun.push(cmdname);
@@ -2378,7 +2135,6 @@ function botNode(_config, user, func) {
                     }
                 });
                 if(admin.length == 0) {admin.push("*Nothing found.*");}
-                if(nsfw.length == 0) {nsfw.push("*Nothing found.*");}
                 if(fun.length == 0) {fun.push("*Nothing found.*");}
                 if(tools.length == 0) {tools.push("*Nothing found.*");}
                 if(troll.length == 0) {troll.push("*Nothing found.*");}
@@ -2389,7 +2145,6 @@ function botNode(_config, user, func) {
                     .setTitle("Theseus")
                     .setDescription("List of commands, to view info about a command, type `help cmd`\n`* = custom command, not made by or distributed with theseus`")
                     .addField("🛡️ Administration Commands", admin.join(", "), false)
-                    .addField("🔞 NSFW Commands", nsfw.join(", "), false)
                     .addField("🤪 Fun Commands", fun.join(", "), false)
                     .addField("⚙️ Tools Commands", tools.join(", "), false)
                     .addField("🤥 Trolling Commands", troll.join(", "), false)
