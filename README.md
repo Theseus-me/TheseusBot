@@ -29,14 +29,7 @@
   <p align="center">
     A fun to use selfbot that was intended to be free
     <br />
-    <a href="https://github.com/Theseus-me/TheseusBot"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/Theseus-me/TheseusBot">View Demo</a>
-    ·
-    <a href="https://github.com/Theseus-me/TheseusBot/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Theseus-me/TheseusBot/issues">Request Feature</a>
+    This is no longer being worked on.
   </p>
 </div>
 
